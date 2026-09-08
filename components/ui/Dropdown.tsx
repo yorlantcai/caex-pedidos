@@ -42,8 +42,8 @@ export default function Dropdown<T extends string>({ value, options, onChange, w
           padding: "0.625rem 0.875rem",
           borderRadius: "0.75rem",
           fontSize: "0.8125rem",
-          background: "rgba(255,255,255,0.05)",
-          border: "1px solid rgba(255,255,255,0.12)",
+          background: "var(--surface)",
+          border: "1px solid var(--border2)",
           color: "var(--text)",
           cursor: "pointer",
           transition: "border-color 0.2s, background 0.2s",
@@ -69,9 +69,9 @@ export default function Dropdown<T extends string>({ value, options, onChange, w
           width: "100%",
           borderRadius: "0.75rem",
           overflow: "hidden",
-          background: "rgba(20,20,18,0.95)",
+          background: "var(--bg)",
           backdropFilter: "blur(24px)",
-          border: "1px solid rgba(255,255,255,0.10)",
+          border: "1px solid var(--border2)",
           boxShadow: "0 20px 40px rgba(0,0,0,0.5)",
           zIndex: 50,
           animation: "fade-in 0.15s ease both",
@@ -88,18 +88,18 @@ export default function Dropdown<T extends string>({ value, options, onChange, w
                 justifyContent: "space-between",
                 padding: "0.625rem 0.875rem",
                 fontSize: "0.8125rem",
-                color: opt.value === value ? "var(--gold)" : "var(--muted)",
-                background: opt.value === value ? "rgba(200,164,159,0.08)" : "transparent",
+                color: opt.value === value ? "var(--gg2)" : "var(--muted)",
+                background: opt.value === value ? "var(--surface2)" : "transparent",
                 border: "none",
                 cursor: "pointer",
                 transition: "background 0.15s, color 0.15s",
                 textAlign: "left",
               }}
-              onMouseEnter={e => { if (opt.value !== value) (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.04)"; }}
+              onMouseEnter={e => { if (opt.value !== value) (e.currentTarget as HTMLElement).style.background = "var(--surface)"; }}
               onMouseLeave={e => { if (opt.value !== value) (e.currentTarget as HTMLElement).style.background = "transparent"; }}
             >
               {opt.label}
-              {opt.value === value && <Check size={11} style={{ color: "var(--gold)" }} />}
+              {opt.value === value && <Check size={11} style={{ color: "var(--gg2)" }} />}
             </button>
           ))}
         </div>
